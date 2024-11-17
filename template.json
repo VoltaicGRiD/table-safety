@@ -1,0 +1,18 @@
+{
+  "SkillTree": {
+    "name": "SkillTree",
+    "type": "SkillTree",
+    "children": [
+      {
+        "name": "Skill1",
+        "type": "Skill",
+        "children": []
+      },
+      {
+        "name": "Skill2",
+        "type": "Skill",
+        "children": []
+      }
+    ]
+  }
+}
