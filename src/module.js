@@ -10,8 +10,11 @@ Hooks.once("socketlib.ready", () => {
   // Pause
   socket.register("pause", tableSafetyPauseRequest);
 
-  // hardstop
-  socket.register("hardstop", tableSafetyhardstopRequest);
+  // Fastforward
+  socket.register("fastforward", tableSafetyFastforwardRequest);
+
+  // Hardstop
+  socket.register("hardstop", tableSafetyHardstopRequest);
 
   // Hands
   socket.register("hands", tableSafetyHandsRequest);
@@ -34,11 +37,22 @@ function tableSafetyPauseRequest(userId) {
   })
 }
 
-function tableSafetyhardstopRequest(userId) {
+function tableSafetyHardstopRequest(userId) {
   highlightAcknowledge();
   ui.notifications.warn("TABLE SAFETY - A player has requested a scene and/or situation hardstop.", { permanent: true });
   requests.push({
     type: "hardstop",
+    user: userId,
+    time: Date.now()
+  })
+}
+
+function tableSafetyFastforwardRequest(userId) {
+  highlightAcknowledge();
+  const username = game.users.get(userId).name;
+  ui.notifications.warn(`TABLE SAFETY - A player would like to fast-forward through this scene and/or situation.`, { permanent: true });
+  requests.push({
+    type: "fastforward",
     user: userId,
     time: Date.now()
   })
@@ -99,6 +113,16 @@ Hooks.on("renderSidebarTab", (tab) => {
     socket.executeForAllGMs("hardstop", game.user._id);
   };
 
+  const fastforwardButton = document.createElement('button');
+  const fastforwardButtonIcon = document.createElement('i');
+  fastforwardButtonIcon.classList.add("fa-solid", "fa-forward");
+  fastforwardButton.appendChild(fastforwardButtonIcon);
+  fastforwardButton.type = "button";
+  fastforwardButton.classList.add("table-safety-button")
+  fastforwardButton.onclick = async (event) => {
+    await socket.executeForAllGMs("fastforward", game.user._id);
+  };
+
   const handsButton = document.createElement('button');
   const handsButtonIcon = document.createElement('i');
   handsButtonIcon.classList.add("fa-solid", "fa-hand");
@@ -129,6 +153,7 @@ Hooks.on("renderSidebarTab", (tab) => {
   if (!game.user.isGM) control.appendChild(pauseButton);
   if (!game.user.isGM) control.appendChild(hardstopButton);
   if (!game.user.isGM) control.appendChild(handsButton);
+  if (!game.user.isGM) control.appendChild(fastforwardButton);
   if (game.user.isGM) control.appendChild(acknowledgeButton);
   control.classList.add("table-safety");
 

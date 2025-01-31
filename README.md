@@ -1,71 +1,65 @@
-![](https://img.shields.io/badge/Foundry-v10-informational)
-<!--- Downloads @ Latest Badge -->
-<!--- replace <user>/<repo> with your username/repository -->
-<!--- ![Latest Release Download Count](https://img.shields.io/github/downloads/<user>/<repo>/latest/module.zip) -->
+# Table Safety
 
-<!--- Forge Bazaar Install % Badge -->
-<!--- replace <your-module-name> with the `name` in your manifest -->
-<!--- ![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2F<your-module-name>&colorB=4aa94a) -->
+Built to work alongside other safety tools, and utilizing the [TTRPG Safety Toolkit](https://ttrpgsafetytoolkit.com) as its primary inspiration.
+This module is designed to slim down the official tools, and provides 4 tools, with quick access, for players to alert the GM of potential issues. This includes the following buttons,
+above the chat options menu in the chat-log tab.
 
+## For Players
 
-# How to use this Template to create a versioned Release
+### Pause
 
-1. Open your repository's releases page.
+Pressing this button as a player, will alert the GM that someone would like the game and narration to be paused. This is a great option to let the GM 
+know that you need a break, or that you want to speak with the GM in private at the earliest possible convenience. On the GMs side, they will receive 
+a notification that must be dismissed manually, and an acknowledge button will light up, which can be pressed to tell that player that the GM got the
+request, and acknowledged it.
 
-![Where to click to open repository releases.](https://user-images.githubusercontent.com/7644614/93409301-9fd25080-f864-11ea-9e0c-bdd09e4418e4.png)
+**For only the pause safety**, the game will pause when the GM acknowledges requests.
 
-2. Click "Draft a new release"
+**The player who pressed this button is not revealed, not even to the GM**
 
-![Draft a new release button.](https://user-images.githubusercontent.com/7644614/93409364-c1333c80-f864-11ea-89f1-abfcb18a8d9f.png)
+### Hardstop
 
-3. Fill out the release version as the tag name.
+This button is designed to work practically identically to the "X Card" from the [TTRPG Safety Toolkit](https://ttrpgsafetytoolkit.com). When pressed,
+it will alert the GM that someone has requested a "scene / situation hardstop", which MUST be dismissed manually by the GM. Again, the GM can press
+their acknowledge button, which will alert the player that pressed the button that the GM saw their request. 
 
-If you want to add details at this stage you can, or you can always come back later and edit them.
+**The player who pressed this button is not revealed, not even to the GM**
 
-![Release Creation Form](https://user-images.githubusercontent.com/7644614/93409543-225b1000-f865-11ea-9a19-f1906a724421.png)
+### Fast-Forward
 
-4. Hit submit.
+A very simple premise. For any reason, press this button to alert the GM that you'd like this particular scenario to be sped up. This can easily be used for
+a "fade-to-black" moment. Much like the other buttons, this will alert the GM that a player would like to fast forward, but does not tell the GM what player it was.
 
-5. Wait a few minutes.
+**The player who pressed this button is not revealed, not even to the GM**
 
-A Github Action will run to populate the `module.json` and `module.zip` with the correct urls that you can then use to distribute this release. You can check on its status in the "Actions" tab.
+### Hands
 
-![Actions Tab](https://user-images.githubusercontent.com/7644614/93409820-c1800780-f865-11ea-8c6b-c3792e35e0c8.png)
+This button is a simple "raise hand" alert. When pressed, it will let all other players know *"Another player is would like the chance to speak."*, without 
+revealing the player that pressed it, and will tell the GM *"Player `X` would like the chance to speak."*. This will allow the GM to see who is trying to 
+speak, and can help spin a conversation towards letting that particular player speak.
 
-6. Grab the module.json url from the release's details page.
+![Player-facing buttons. From left to right: "Pause", "Hardstop", "Hands", "Fast-Forward"](image.png)
 
-![image](https://user-images.githubusercontent.com/7644614/93409960-10c63800-f866-11ea-83f6-270cc5d10b71.png)
+## For GMs
 
-This `module.json` will only ever point at this release's `module.zip`, making it useful for sharing a specific version for compatibility purposes.
+Want to give your players a lot more freedom with deciding on which content they're comfortable with, and you'd like to make the explanation as simple
+as possible while still giving plenty of room for expression? This module has a simple suite of 4 buttons, each with their own purpose, to help your players
+communicate safely with you, about what they do, and do not like. Additionally, the inclusion of a very simple "raise hand" button, makes it incredibly
+easy for you to navigate a conversation in a way to help that player get to speak, especially in parties with one or two very talkative players. 
 
-7. You can use the url `https://github.com/<user>/<repo>/releases/latest/download/module.json` to refer to the manifest.
+On top of all of that, you'll never see what player pressed what button, except for if they use "raise hand". Only that button expresses the player's username
+to GM, and ONLY GM so that you can give that player emphasis. All other players will only see "Another player would like the chance to speak", which may sometimes
+be the only encouragement to pause an ongoing conversation needed.
 
-This is the url you want to use to install the module typically, as it will get updated automatically.
+![GM-facing notifications. From top to bottom: "Hands", "Hardstop", "Pause"](gm-notifications.png)
+![GM-facint notifications part 2. "Fast-Forward"](gm-notifications-2.png)
 
-# How to List Your Releases on Package Admin
+<video controls src="gm-acknowledge-button.mp4" title="GM Acknowledge Button" loop muted autoplay></video>
 
-To request a package listing for your first release, go to the [Package Submission Form](https://foundryvtt.com/packages/submit) (accessible via a link at the bottom of the "[Systems and Modules](https://foundryvtt.com/packages/)" page on the Foundry website).
+## Settings
 
-Fill in the form. "Package Name" must match the name in the module manifest.  Package Title will be the display name for the package.  Package URL should be your repo URL.
-![image](https://user-images.githubusercontent.com/36359784/120664263-b49e5500-c482-11eb-9126-af7006389903.png)
+This module does not presently have any settings that are customizeable. 
 
+## Contributions 
 
-One of the Foundry staff will typically get back to you with an approval or any further questions within a few days, and give you access to the package admin pages.
-
-Once you have access to the [module admin page](https://foundryvtt.com/admin/packages/package/), you can release a new version by going into the page for your module, scrolling to the bottom, and filling in a new Package Version.
-
-When listing a new version, Version should be the version number you set above, and the Manifest URL should be the manifest __for that specific version__ (do not use /latest/ here).
-![image](https://user-images.githubusercontent.com/36359784/120664346-c4b63480-c482-11eb-9d8b-731b50d70939.png)
-
-> ### :warning: Important :warning:
-> 
-> It is very important that you use the specific release manifest url, and not the `/latest` url here. For more details about why this is important and how Foundry Installs/Updates packages, read [this wiki article](https://foundryvtt.wiki/en/development/guides/releases-and-history).
-
-Clicking "Save" in the bottom right will save the new version, which means that anyone installing your module from within Foundry will get that version, and a post will be generated in the #release-announcements channel on the official Foundry VTT Discord.
-
-
-# FoundryVTT Module
-
-Does something, probably
-
-## Changelog
+I happily welcome bug, feature requests, and questions and concerns via GitHub Issues, but will not accept pull requests from external repositories. 
