@@ -38,7 +38,7 @@ This button is a simple "raise hand" alert. When pressed, it will let all other 
 revealing the player that pressed it, and will tell the GM *"Player `X` would like the chance to speak."*. This will allow the GM to see who is trying to 
 speak, and can help spin a conversation towards letting that particular player speak.
 
-![Player-facing buttons. From left to right: "Pause", "Hardstop", "Hands", "Fast-Forward"](image.png)
+![Player-facing buttons. From left to right: "Pause", "Hardstop", "Hands", "Fast-Forward"](player-buttons.png)
 
 ## For GMs
 
