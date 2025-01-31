@@ -7,13 +7,6 @@
     "verified": "12"
   },
   "relationships": {
-    "systems": [
-      {
-        "id": "utopia",
-        "type": "system",
-        "compatibility": {}
-      }
-    ],
     "requires": [
       {
         "id": "socketlib",
