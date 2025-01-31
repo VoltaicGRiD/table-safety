@@ -1,50 +1,49 @@
 {
-  "id": "skilltrees",
-  "title": "Shadowell Skill Trees",
-  "description": "",
-  "version": "#{VERSION}#",
-  "library": "false",
-  "manifestPlusVersion": "1.2.0",
+  "id": "table-safety",
+  "title": "Table Safety",
+  "version": "0.0.1",
   "compatibility": {
-    "minimum": 12,
-    "verified": 12
+    "minimum": "12",
+    "verified": "12"
   },
-  "authors": [
-    {
-      "name": "Dustin Conlon (VoltaicGRid)",
-      "url": "https://github.com/VoltaicGRiD/shadowell-skilltrees",
-      "discord": "voltaicgrid"
-    }
-  ],
   "relationships": {
-    "systems": ["pf2e"],
-    "requires": []
+    "systems": [
+      {
+        "id": "utopia",
+        "type": "system",
+        "compatibility": {}
+      }
+    ],
+    "requires": [
+      {
+        "id": "socketlib",
+        "type": "module",
+        "compatibility": {}
+      }
+    ]
   },
-  "esmodules": [
-    "scripts/module.js"
-  ],
-  "scripts": [
-    "scripts/lib/lib.js"
-  ],
   "styles": [
-    "styles/module.css"
+    "src/module.css"
+  ],
+  "esmodules": [
+    "src/module.js"
   ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
-      "path": "languages/en.json"
+      "path": "languages/en.json",
+      "flags": {}
     }
   ],
-  "url": "#{URL}#",
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#",
-  "license": "LICENSE",
-  "readme": "README.md",
-  "media": [
+  "authors": [
     {
-      "type": "icon",
-      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+      "name": "Dustin Conlon (VoltaicGRiD)",
+      "discord": "voltaicgrid",
+      "email": "dustin@dustinconlon.com",
+      "flags": {}
     }
-  ]
+  ],
+  "socket": true,
+  "url": "https://github.com/VoltaicGRiD/table-safety"
 }

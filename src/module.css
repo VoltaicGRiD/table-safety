@@ -1,0 +1,38 @@
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 239, 237, 0.7);
+    background-color: #ccccc0;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(231, 76, 60, 0.4);
+    background-color: #fd672b;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 239, 237, 0.7);
+    background-color: #ccccc0;
+  }
+}
+
+.table-safety {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5px;
+  flex: 0 0 28px;
+  padding: 3px;
+
+  .table-safety-button {
+    flex: 1;
+    height: 28px;
+    border: none;
+  }
+
+  .table-safety-acknowledge {
+    background-color: #686868;
+  }
+
+  .table-safety-acknowledge.active {
+    animation: pulse 1.5s infinite ease-in-out;
+    border: 1px solid #4e3534;
+  }
+}

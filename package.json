@@ -2,8 +2,8 @@
   "name": "shadowell-skilltrees",
   "version": "1.0.0",
   "description": "A custom Shadowell skill trees module",
-  "main": "scripts/module.js",
   "scripts": {
+    "build": "tsc && vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,13 +22,10 @@
     "url": "https://github.com/VoltaicGRiD/shadowell-skilltrees/issues"
   },
   "homepage": "https://github.com/VoltaicGRiD/shadowell-skilltrees#readme",
-  "dependencies": {
-    "express": "^4.21.1",
-    "typescript": "^5.6.3"
-  }, 
   "devDependencies": {
-    "@league-of-foundry-developers/foundry-vtt-types": "github:League-of-Foundry-Developers/foundry-vtt-types#main",
-    "@types/express": "^5.0.0",
-    "@types/typescript": "^0.4.29"
+    "@league-of-foundry-developers/foundry-vtt-types": "^12.331.1-beta",
+    "rollup-plugin-copy": "^3.5.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   }
 }
