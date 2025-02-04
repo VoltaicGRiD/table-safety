@@ -91,7 +91,7 @@ async function gmAcknowledgement(userId) {
 }
 
 Hooks.on("renderSidebarTab", (tab) => {
-  if (!tab.constructor.name === "ChatLog") return;
+  if (tab.title !== "Chat Log") return;
 
   const pauseButton = document.createElement('button');
   const pauseButtonIcon = document.createElement('i');
