@@ -1,7 +1,7 @@
 {
   "id": "table-safety",
   "title": "Table Safety",
-  "version": "1.0.0",
+  "version": "#{VERSION}#",
   "compatibility": {
     "minimum": "12",
     "verified": "12"
@@ -38,5 +38,7 @@
     }
   ],
   "socket": true,
-  "url": "https://github.com/VoltaicGRiD/table-safety"
+  "url": "#{URL}#",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#",
 }
