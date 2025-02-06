@@ -1,31 +1,16 @@
 {
-  "name": "shadowell-skilltrees",
+  "name": "table-safety",
   "version": "1.0.0",
-  "description": "A custom Shadowell skill trees module",
-  "scripts": {
-    "build": "tsc && vite build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "A module for FoundryVTT to enable additional safety options for players.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VoltaicGRiD/shadowell-skilltrees.git"
+    "url": "git+https://github.com/VoltaicGRiD/table-safety.git"
   },
   "keywords": [
-    "skilltrees",
+    "table-safety",
     "foundryvtt",
-    "pathfinder2e",
-    "pf2e"
   ],
   "author": "Dustin Conlon (VoltaicGRiD)",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/VoltaicGRiD/shadowell-skilltrees/issues"
-  },
-  "homepage": "https://github.com/VoltaicGRiD/shadowell-skilltrees#readme",
-  "devDependencies": {
-    "@league-of-foundry-developers/foundry-vtt-types": "^12.331.1-beta",
-    "rollup-plugin-copy": "^3.5.0",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.11"
-  }
+  "homepage": "https://github.com/VoltaicGRiD/table-safety",
 }
