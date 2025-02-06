@@ -40,5 +40,5 @@
   "socket": true,
   "url": "#{URL}#",
   "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#",
+  "download": "#{DOWNLOAD}#"
 }
