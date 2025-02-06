@@ -16,10 +16,10 @@
     ]
   },
   "styles": [
-    "src/module.css"
+    "scripts/module.css"
   ],
   "esmodules": [
-    "src/module.js"
+    "scripts/module.js"
   ],
   "languages": [
     {
