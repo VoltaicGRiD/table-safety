@@ -4,6 +4,8 @@ Built to work alongside other safety tools, and utilizing the [TTRPG Safety Tool
 This module is designed to slim down the official tools, and provides 4 tools, with quick access, for players to alert the GM of potential issues. This includes the following buttons,
 above the chat options menu in the chat-log tab.
 
+### Note - Presently Untranslated
+
 ## For Players
 
 ### Pause
