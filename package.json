@@ -1,6 +1,6 @@
 {
   "name": "table-safety",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "A module for FoundryVTT to enable additional safety options for players.",
   "repository": {
     "type": "git",
