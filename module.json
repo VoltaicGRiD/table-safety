@@ -1,7 +1,7 @@
 {
   "id": "table-safety",
   "title": "Table Safety",
-  "version": "#{VERSION}#",
+  "version": "1.0",
   "compatibility": {
     "minimum": "12",
     "verified": "12"
@@ -38,7 +38,7 @@
     }
   ],
   "socket": true,
-  "url": "#{URL}#",
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#"
+  "url": "https://github.com/VoltaicGRiD/table-safety",
+  "manifest": "https://github.com/VoltaicGRiD/table-safety/releases/download/latest/module.json",
+  "download": "https://github.com/VoltaicGRiD/table-safety/releases/download/latest/module.zip"
 }
