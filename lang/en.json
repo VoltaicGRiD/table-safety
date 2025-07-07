@@ -1,0 +1,19 @@
+{
+  "TableSafety": {
+      "MESSAGES": {
+      "PauseRequest": "TABLE SAFETY - A player has requested a game pause.",
+      "HardstopRequest": "TABLE SAFETY - A player has request a scene and/or situation hardstop.",
+      "FastForwardRequest": "TABLE SAFETY - A player would like to fast-forward through this scene and/or situation.",
+      "SpeakRequest": "TABLE SAFETY - {username} would like a chance to speak.",
+      "SpeakNotification": "TABLE SAFETY - Another player would like the chance to speak.",
+      "RequestSent": "TABLE SAFETY - Your request was sent."
+    },
+    "TOOLTIPS": {
+      "PauseTooltip": "Request a game pause from the GM(s)",
+      "HardstopTooltip": "Request a scene / game hardstop",
+      "FastForwardTooltip": "Request to fast-forward through this scene / situation",
+      "SpeakTooltip": "Request the chance to speak",
+      "AcknowledgeTooltip": "Acknowledge any incoming Table Safety requests."
+    }
+  }
+}
