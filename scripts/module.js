@@ -167,7 +167,7 @@ Hooks.on("renderSidebarTab", (tab) => {
 });
 
 Hooks.once("renderChatInput", (app, elements, context) => {
-  if (game.version.major > 12) return; // Only run for v13 and above
+  if (game.release.generation < 13) return; // Only run for v13 and above
 
   const pauseButton = document.createElement('button');
   const pauseButtonIcon = document.createElement('i');
