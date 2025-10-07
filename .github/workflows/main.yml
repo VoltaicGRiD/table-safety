@@ -43,4 +43,4 @@ jobs:
           url: "https://api.foundryvtt.com/_api/packages/release_version/"
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json", "Authorization": "${{ secrets.FoundryVTT_API_Key }}"}'
-          data: '{ "id": "table-safety", "dry-run": false, "release": { "version": "${{ inputs.tag }}", "manifest": "https://github.com/VoltaicGRiD/table-safety/releases/download/${{ inputs.tag }}/system.json", "notes": "https://github.com/VoltaicGRiD/table-safety/releases/tag/${{ inputs.tag }}", "compatibility": { "minimum": "12", "verified": "13.346", "maximum": "13" } } }'
+          data: '{ "id": "table-safety", "dry-run": false, "release": { "version": "${{ inputs.tag }}", "manifest": "https://github.com/VoltaicGRiD/table-safety/releases/download/${{ inputs.tag }}/module.json", "notes": "https://github.com/VoltaicGRiD/table-safety/releases/tag/${{ inputs.tag }}", "compatibility": { "minimum": "12", "verified": "13.346", "maximum": "13" } } }'
