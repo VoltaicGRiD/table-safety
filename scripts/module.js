@@ -1,3 +1,5 @@
+CONFIG.debug.hooks = true;
+
 let socket;
 let requests = [];
 
@@ -169,6 +171,8 @@ Hooks.on("renderSidebarTab", (tab) => {
 Hooks.once("renderChatInput", (app, elements, context) => {
   if (game.release.generation < 13) return; // Only run for v13 and above
 
+  console.log("Table Safety => ", app, elements, context);
+
   const pauseButton = document.createElement('button');
   const pauseButtonIcon = document.createElement('i');
   pauseButtonIcon.classList.add("fa-solid", "fa-pause");
@@ -247,8 +251,15 @@ Hooks.once("renderChatInput", (app, elements, context) => {
   spacer.style.height = "5px";
 
   //context.previousParent.appendChild(control);
-  context.previousParent.querySelector("#roll-privacy").appendChild(spacer);
-  context.previousParent.querySelector("#roll-privacy").appendChild(control);
+
+  if (context.previousParent.querySelector('#roll-privacy')) {
+    context.previousParent.querySelector("#roll-privacy").appendChild(spacer);
+    context.previousParent.querySelector("#roll-privacy").appendChild(control);
+  } else {
+    app.element.querySelector("#roll-privacy").appendChild(spacer);
+    app.element.querySelector("#roll-privacy").appendChild(control);
+  }
+  
   const chatScroll = app.element.querySelector(".chat-scroll");
   chatScroll.style.height = chatScroll.style.height - "30px";
   //app.element.querySelector("#roll-privacy").appendChild(control);
