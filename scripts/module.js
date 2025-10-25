@@ -1,5 +1,3 @@
-CONFIG.debug.hooks = true;
-
 let socket;
 let requests = [];
 
