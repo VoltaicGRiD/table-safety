@@ -21,12 +21,20 @@ jobs:
       - name: Package SRD Content
         run: |
           npm run pack --if-present
+      - name: Update module.json version and download URL
+        run: |
+          TAG="${{ inputs.tag }}"
+          jq \
+            --arg v "$TAG" \
+            --arg url "https://github.com/VoltaicGRiD/table-safety/releases/download/$TAG/table-safety.zip" \
+            '.version = $v | .download = $url' \
+            module.json > module.tmp.json
+          mv module.tmp.json module.json
       - name: Compress
         run: |
           cd ../
           rm -rf table-safety.zip
-          rm -rf table-safety.zip
-          zip -r utopia.zip table-safety -x ".git/*" ".github/*"
+          zip -r table-safety.zip table-safety -x ".git/*" ".github/*"
       - name: Add Build to Release
         uses: softprops/action-gh-release@v2
         with:
