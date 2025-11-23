@@ -21,12 +21,20 @@ jobs:
       - name: Package SRD Content
         run: |
           npm run pack --if-present
+      - name: Update module.json version and download URL
+        run: |
+          TAG="${{ inputs.tag }}"
+          jq \
+            --arg v "$TAG" \
+            --arg url "https://github.com/VoltaicGRiD/table-safety/releases/download/$TAG/table-safety.zip" \
+            '.version = $v | .download = $url' \
+            module.json > module.tmp.json
+          mv module.tmp.json module.json
       - name: Compress
         run: |
           cd ../
           rm -rf table-safety.zip
-          rm -rf table-safety.zip
-          zip -r utopia.zip table-safety -x ".git/*" ".github/*"
+          zip -r table-safety.zip table-safety -x ".git/*" ".github/*"
       - name: Add Build to Release
         uses: softprops/action-gh-release@v2
         with:
@@ -34,13 +42,24 @@ jobs:
           tag_name: ${{ inputs.tag}}
           files: |
             ../table-safety.zip
-            ../table-safety/system.json
+            ../table-safety/module.json
           generate_release_notes: true
           draft: false
+      - name: Verify Release
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const tag = "${{ inputs.tag }}";
+            const release = await github.rest.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag: tag
+            });
+            console.log("Release found:", release.data.html_url);
       - name: Deploy
         uses: fjogeleit/http-request-action@v1
         with:
           url: "https://api.foundryvtt.com/_api/packages/release_version/"
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json", "Authorization": "${{ secrets.FoundryVTT_API_Key }}"}'
-          data: '{ "id": "table-safety", "dry-run": false, "release": { "version": "${{ inputs.tag }}", "manifest": "https://github.com/VoltaicGRiD/table-safety/releases/download/${{ inputs.tag }}/module.json", "notes": "https://github.com/VoltaicGRiD/table-safety/releases/tag/${{ inputs.tag }}", "compatibility": { "minimum": "12", "verified": "13.346", "maximum": "13" } } }'
+          data: '{ "id": "table-safety", "dry-run": false, "release": { "version": "${{ inputs.tag }}", "manifest": "https://github.com/VoltaicGRiD/table-safety/releases/latest/download/module.json", "notes": "https://github.com/VoltaicGRiD/table-safety/releases/tag/${{ inputs.tag }}", "compatibility": { "minimum": "12", "verified": "13.346", "maximum": "13" } } }'
