@@ -46,7 +46,7 @@ jobs:
           generate_release_notes: true
           draft: false
       - name: Verify Release
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             const tag = "${{ inputs.tag }}";
