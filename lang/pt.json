@@ -1,0 +1,27 @@
+{
+  "TableSafety": {
+    "MESSAGES": {
+      "PauseRequest": "TABLE SAFETY - Um jogador pediu uma pausa no jogo.",
+      "HardstopRequest": "TABLE SAFETY - Um jogador pediu uma parada de segurança por causa da cena/situação.",
+      "FastForwardRequest": "TABLE SAFETY - Um jogador pediu para acelerar a cena/situação por precaução.",
+      "SpeakRequest": "TABLE SAFETY - {username} gostaria de ter a chance de falar.",
+      "SpeakNotification": "TABLE SAFETY - Outro jogador gostaria de ter a chance de falar.",
+      "RequestSent": "TABLE SAFETY - Seu pedido foi enviado.",
+      "Acknowledged": "O Mestre recebeu e tem conhecimento do seu pedido."
+    },
+    "HINT": {
+      "Title": "Bem Vindo ao Table Safety!",
+      "Paragraph1": "Esse módulo fornece uma forma simples dos jogadores pedirem pausas, aceleração de cenas/situações, parada de segurança e oportunidades de fala durante as sessões de jogo.",
+      "Paragraph2": "Como jogador, você pode usar botões adicionados na interface de chat para enviar pedidos ao Mestre. Os Mestres receberão notificações desses pedidos e podem tomar conhecimento quando estiver pronto.",
+      "Paragraph3": "Como Mestre, As a GM, você verá um botão de confirmação que piscará na interface de chat quando existirem pedidos pendentes dos jogadores. you will see an acknowledgment button that lights up when there are pending requests from players. Clique para confirmar que recebeu o pedido.",
+      "Footer": "Aproveite uma experiência de jogo mais confortável e segura.!"
+    },
+    "TOOLTIPS": {
+      "PauseTooltip": "Pede uma pausa para o Mestre",
+      "HardstopTooltip": "Pede uma parada de seguranca",
+      "FastForwardTooltip": "Pede uma aceleração da cena/situação",
+      "SpeakTooltip": "Pede uma chance de falar",
+      "AcknowledgeTooltip": "Confirma o recebimento dos pedidos do Table Safety."
+    }
+  }
+}
