@@ -57,7 +57,7 @@ jobs:
             });
             console.log("Release found:", release.data.html_url);
       - name: Deploy
-        uses: fjogeleit/http-request-action@v1
+        uses: fjogeleit/http-request-action@v2
         with:
           url: "https://api.foundryvtt.com/_api/packages/release_version/"
           method: 'POST'
